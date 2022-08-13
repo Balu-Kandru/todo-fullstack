@@ -1,0 +1,26 @@
+
+.App-header {
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(15px + 2vmin);
+}
+.app-logo{
+    color: #03045e;
+}
+.login-context{
+    margin-top: 10px;
+    padding: 10px 20px;
+}
+
+.login-page{
+    display: flex;
+    flex-direction: column;
+}
+#navi-register{
+    color: #03045e;
+    font-size: 15px;
+    cursor: pointer;
+}
