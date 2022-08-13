@@ -8,7 +8,7 @@ const Register=()=>{
     const navigate=useNavigate()
     const handleregister=(e)=>{
         if(register.password===register.confirmpassword){
-        axios.post("http://localhost:3001/user/register",register).then((res)=>{
+        axios.post("https://server-for-todo-web.herokuapp.com/user/register",register).then((res)=>{
             alert("successfully")
             navigate('/')
         }).catch((err)=>{

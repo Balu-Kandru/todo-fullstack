@@ -9,11 +9,11 @@ const Login=()=>{
         navigate("/register")
     }
     const handlelogin=()=>{
-        axios.post("http://localhost:3001/user/login",login).then((res)=>{
+        axios.post("https://server-for-todo-web.herokuapp.com/user/login",login).then((res)=>{
             alert("successfully")
             localStorage.setItem("authorization",res.data.authToken);
             localStorage.setItem("user",res.data.user)
-            navigate("/todo")
+            navigate("/mainpage")
         }).catch((err)=>{
             console.log(err)
         })

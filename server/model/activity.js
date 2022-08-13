@@ -11,17 +11,17 @@ const activitySchema=new mongoose.Schema({
     },
     status:{
         type:String,
-        default:Pending,
+        default:"Pending",
     },
     time:{
         type:String
     },
     Action:{
         type:String,
-        default:Start
+        default:"Start"
     }
 })
 
-const activityModel=mongoose.model("activitys",activitySchema)
+const activityModel=mongoose.model("activities",activitySchema)
 
 module.exports=activityModel

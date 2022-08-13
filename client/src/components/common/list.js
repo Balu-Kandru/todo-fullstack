@@ -1,4 +1,19 @@
+import axios from "axios"
+import { useEffect, useState } from "react"
+
 const List =()=>{
+    const[activities,setactivities]=useState([])
+    useEffect(()=>{
+        const data={
+            username:localStorage.getItem("user")
+        }
+        console.log(data)
+        axios.get("https://server-for-todo-web.herokuapp.com/list/show",{headers:data}).then((data)=>{
+        setactivities(data.data)
+        }).catch((err)=>{
+            console.log(err)
+        })
+    },[])
     return (
         <>
         <table border={1} className='list-table'>
@@ -11,12 +26,19 @@ const List =()=>{
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>running</td>
-                <td></td>
-                <td></td>
-                <td>Start</td>
-            </tr>
+            {
+                activities.map((element)=>{
+                    return (
+                        <tr>
+                            <td>{element.activity}</td>
+                            <td>{element.status}</td>
+                            <td></td>
+                            <td>{element.Action}</td>
+                        </tr>
+                    )
+                })
+            }
+            
         </tbody>
         </table>
         
