@@ -1,56 +1,128 @@
-.header{
-    height: 15vh;
-    border: 5px solid green;
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
 }
-.mainpage-name{
-    text-align:right;
-    margin-top: 35px;
-    margin-right: 20px;
+
+/* Header Styles */
+.header {
+    height: 12vh;
+    color: white;
+    align-items: center;
+    padding: 0 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-/* navbar */
-.navbar{
+
+.app-name {
+    display: flex;
+    justify-content: flex-start;
+    color: #000;
+}
+
+.mainpage-name {
+    display: flex;
+    justify-content: flex-end;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+}
+
+/* Navbar Styles */
+.navbar {
     height: 82vh;
     width: 15vw;
+    color: white;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    border: 5px solid green;
-    text-align: center;
-    background-color: green;
+    align-items: center;
+    padding: 20px;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
+    position: fixed; 
+    top: 15vh;
+    left: 0;
 }
-.logout{
-    font-weight: bolder;
-    cursor: pointer;
-    font-size: large;
+
+.nav-head h3 {
+    font-size: 1.5rem;
+    color: #000;
     margin-bottom: 10px;
 }
 
-/* for creating */
-.create-one{
-    position: absolute;
-    top:120px;
-    right: 20px;
-    border: 1px solid green;
-    padding: 3px 10px;
+.nav-head p {
+    font-size: 1rem;
+    color: #000;
+}
+
+.logout {
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
     border-radius: 5px;
+    transition: background-color 0.3s ease;
+    color: #000;
 }
 
-/* list table */
-.list-table{
-    position: absolute;
-    top: 200px;
-    left: 250px;
-    text-align: center;
-    width: 1000px;
-    height: 100px;
+.logout:hover {
+    background-color: red;
+}
 
+/* Create Button Styles */
+.create-one {
+    position: absolute;
+    top: 10px; 
+    right: 80px;
 }
-.create-page{
+
+.create-page {
     position: absolute;
     top: 200px;
-    left:600px
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    padding: 10px;
+    padding-left: 30px;
+    padding-right: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
-.input-activity{
+
+.input-activity {
     padding: 10px;
     margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+/* List Table Styles */
+.list-table {
+    position: absolute;
+    top: 200px;
+    left: 400px;
+    width: calc(80% - 220px);
+    border-collapse: collapse;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-table th, .list-table td {
+    padding: 12px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.list-table th {
+    background-color: #4CAF50; 
+    color: white;
+    font-weight: bold;
+}
+
+.list-table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+.list-table tr:hover {
+    background-color: #f1f1f1;
 }

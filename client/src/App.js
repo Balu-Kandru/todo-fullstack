@@ -1,10 +1,10 @@
-import './App.css';
 import { BrowserRouter,Routes,Route } from "react-router-dom";
 import Login from "./components/login/login"
 import Register from './components/register/register';
 import Mainpage from './components/common/mainpage';
 import Createone from './components/common/createone';
-import Protected from './components/utilities';
+import { Protected } from './components/utilities';
+
 function App() {
   return (
     <BrowserRouter>

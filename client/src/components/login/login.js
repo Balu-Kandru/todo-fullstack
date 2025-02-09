@@ -2,6 +2,7 @@ import "./login.css"
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
 import axios from "axios";
+import { baseUrl } from "../utilities";
 const Login=()=>{
     const [login,setlogin]=useState({})
     const navigate=useNavigate()
@@ -9,7 +10,7 @@ const Login=()=>{
         navigate("/register")
     }
     const handlelogin=()=>{
-        axios.post("https://server-for-todo-web.herokuapp.com/user/login",login).then((res)=>{
+        axios.post(`${baseUrl}/user/login`,login).then((res)=>{
             alert("successfully")
             localStorage.setItem("authorization",res.data.authToken);
             localStorage.setItem("user",res.data.user)

@@ -1,32 +1,34 @@
 import axios from "axios"
+import { baseUrl } from "../utilities"
 
 const { useState } = require("react")
 const { Link, useNavigate } = require("react-router-dom")
 
-const Register=()=>{
-    const [register,setregister]=useState({})
-    const navigate=useNavigate()
-    const handleregister=(e)=>{
-        if(register.password===register.confirmpassword){
-        axios.post("https://server-for-todo-web.herokuapp.com/user/register",register).then((res)=>{
-            alert("successfully")
-            navigate('/')
-        }).catch((err)=>{
-            console.log(err)
-        })
-        }else{
+const Register = () => {
+    const [register, setregister] = useState({})
+    const navigate = useNavigate()
+    const handleregister = (e) => {
+        if (register.password === register.confirmpassword) {
+
+            axios.post(`${baseUrl}/user/register`, register).then((res) => {
+                alert("successfully")
+                navigate('/')
+            }).catch((err) => {
+                console.log(err)
+            })
+        } else {
             alert("password and confirm password are different")
         }
 
     }
     return (
         <>
-        <div className="register-page">
+            <div className="register-page">
                 <header className="App-header">
                     <h1 className="app-logo" >TodoList</h1>
-                    <input className="login-context" placeholder="UserName" onChange={(e)=>{setregister({...register, username: e.target.value})}} />
-                    <input className="login-context" placeholder="Password" onChange={(e)=>{setregister({...register, password: e.target.value})}} />
-                    <input className="login-context" placeholder="Confirm Password" onChange={(e)=>{setregister({...register, confirmpassword: e.target.value})}} />                   
+                    <input className="login-context" placeholder="UserName" onChange={(e) => { setregister({ ...register, username: e.target.value }) }} />
+                    <input className="login-context" placeholder="Password" onChange={(e) => { setregister({ ...register, password: e.target.value }) }} />
+                    <input className="login-context" placeholder="Confirm Password" onChange={(e) => { setregister({ ...register, confirmpassword: e.target.value }) }} />
                     <button className="login-context" onClick={handleregister} >Register</button>
                     <small className="login-context" id="navi-register">Already have an account? <Link to='/' >Login</Link></small>
                 </header>
