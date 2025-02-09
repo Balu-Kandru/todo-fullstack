@@ -1,4 +1,4 @@
-# Post App - React & Express with MongoDB
+# Todo App - React & Express with MongoDB
 
 ## This project allows users to:
 ### Register and Login.
